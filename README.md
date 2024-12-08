@@ -10,8 +10,7 @@ Pour faire usage de ce package il faut avoir les éléments suivants
 ## Installation
 
 ```shell
-export PIP_TRUSTED_HOST=gitlab_analytics.ocitnetad.ci
-pip install git+https://gitlab_analytics.ocitnetad.ci/cspt/datamesh/datamesh-validation.git
+pip install git+https://github.com/Donutson/starburst_api_python.git
 ```
 
 ## Présentation du package
