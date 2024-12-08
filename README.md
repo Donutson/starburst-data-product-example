@@ -5,7 +5,7 @@ L'objectif de ce package est de fournir un ensemble de contrôle pour s'assurer 
 Pour faire usage de ce package il faut avoir les éléments suivants
 1. Une instance de starburst Entreprise
 2. Python >= 3.7
-3. git+https://gitlab_analytics.ocitnetad.ci/cspt/datamesh/starburst-python-wrapper.git
+3. git+https://github.com/Donutson/starburst_api_python.git
 
 ## Installation
 
