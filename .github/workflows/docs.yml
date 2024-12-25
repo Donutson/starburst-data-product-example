@@ -24,12 +24,11 @@ jobs:
     
     - name: Specify Python path
       run: echo "PYTHONPATH=$(pwd)" >> $GITHUB_ENV
-    
-    - name: Install python wrapper
-      run: pip install git+https://github.com/Donutson/starburst_api_python.git
 
     - name: Build documentation
-      run: sphinx-build -b html docs_source/source/ docs/
+      run: |
+        pip install git+https://github.com/Donutson/starburst_api_python.git
+        sphinx-build -b html docs_source/source/ docs/
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
