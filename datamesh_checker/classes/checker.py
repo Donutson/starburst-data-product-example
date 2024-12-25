@@ -2,7 +2,9 @@
 Module to make differents check on domains and data products in the context
 of OCI datamesh
 """
-import starburst_api
+from starburst_api.classes.class_starburst import Starburst
+from starburst_api.classes.class_data_product import DataProduct
+from starburst_api.classes.class_dataset_view import DatasetView
 
 from datamesh_checker.helpers.checker import is_valid_domain_product_name
 from datamesh_checker.helpers.string import to_snake_case, is_snake_case
@@ -37,7 +39,7 @@ class Checker:
             Check the validity of all data products within a domain.
     """
 
-    def __init__(self, starburst_client: starburst_api.classes.class_starburst.Starburst):
+    def __init__(self, starburst_client: Starburst):
         """
         Initialize the Checker with a Starburst client.
 
@@ -83,7 +85,7 @@ class Checker:
         }
 
     def check_data_product_info(
-        self, data_product: starburst_api.classes.class_data_product.DataProduct, valid_catalogs: dict = ["minio", "minio_robin"]
+        self, data_product: DataProduct, valid_catalogs: dict = ["minio", "minio_robin"]
     ) -> dict:
         """
         Check the validity of a data product's properties.
@@ -124,7 +126,7 @@ class Checker:
             },
         }
 
-    def check_data_product_dataset(self, dataset: starburst_api.classes.class_dataset_view.DatasetView) -> dict:
+    def check_data_product_dataset(self, dataset: DatasetView) -> dict:
         """
         Check the validity of a dataset's properties.
 
@@ -155,7 +157,7 @@ class Checker:
             },
         }
 
-    def check_data_product_all_datasets(self, data_product: starburst_api.classes.class_data_product.DataProduct) -> list:
+    def check_data_product_all_datasets(self, data_product: DataProduct) -> list:
         """
         Check all datasets of a data product.
 
