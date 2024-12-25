@@ -12,3 +12,4 @@ Starburst Data Product Checker
    :caption: Contents:
 
    introduction
+   checker
