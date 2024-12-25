@@ -25,7 +25,7 @@ jobs:
     - name: Specify Python path
       run: echo "PYTHONPATH=$(pwd)" >> $GITHUB_ENV
     
-    - name: Install starburst api python
+    - name: Install python wrapper
       run: pip install git+https://github.com/Donutson/starburst_api_python.git
 
     - name: Build documentation
