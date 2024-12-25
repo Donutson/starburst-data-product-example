@@ -48,6 +48,10 @@
 <li class="toctree-l1"><a class="reference internal" href="introduction.html#prerequisites">Prerequisites</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html#installation">Installation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Checker</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#classes.checker.Checker"><code class="docutils literal notranslate"><span class="pre">Checker</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#classes.checker.Checker.starburst_client"><code class="docutils literal notranslate"><span class="pre">Checker.starburst_client</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#usage-example">Usage Example</a></li>
 </ul>
 </li>
@@ -80,6 +84,67 @@
              
   <section id="checker">
 <h1>Checker<a class="headerlink" href="#checker" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="classes.checker.Checker">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">classes.checker.</span></span><span class="sig-name descname"><span class="pre">Checker</span></span><a class="headerlink" href="#classes.checker.Checker" title="Link to this definition"></a></dt>
+<dd><p>A class to validate and check various properties of domains and data products
+in the Starburst data catalog.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="classes.checker.Checker.starburst_client">
+<span class="sig-name descname"><span class="pre">starburst_client</span></span><a class="headerlink" href="#classes.checker.Checker.starburst_client" title="Link to this definition"></a></dt>
+<dd><p>An instance of the Starburst client to interact
+with the Starburst API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Starburst</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">check_domain(domain_name</span></span></dt>
+<dd><p>str) -&gt; dict:
+Check the validity of a domain’s properties.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">check_data_product_info(data_product</span></span></dt>
+<dd><p>DataProduct, valid_catalogs: dict=[“minio”, “minio_robin”]) -&gt; dict:
+Check the validity of a data product’s properties.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">check_data_product_dataset(dataset</span></span></dt>
+<dd><p>DatasetView) -&gt; dict:
+Check the validity of a dataset’s properties.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">check_data_product_all_datasets(data_product</span></span></dt>
+<dd><p>DataProduct) -&gt; list:
+Check all datasets of a data product.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">check_domain_data_product(domain_name</span></span></dt>
+<dd><p>str, data_product_name: str) -&gt; dict:
+Check the validity of a specific data product within a domain.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">check_domain_all_data_products(domain_name</span></span></dt>
+<dd><p>str) -&gt; list:
+Check the validity of all data products within a domain.</p>
+</dd></dl>
+
+</dd></dl>
+
 <section id="usage-example">
 <h2>Usage Example<a class="headerlink" href="#usage-example" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">classes.checker</span> <span class="kn">import</span> <span class="n">Checker</span>
