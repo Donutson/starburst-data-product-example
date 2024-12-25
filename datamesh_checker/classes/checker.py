@@ -2,9 +2,7 @@
 Module to make differents check on domains and data products in the context
 of OCI datamesh
 """
-from starburst_api.classes.class_starburst import Starburst
-from starburst_api.classes.class_data_product import DataProduct
-from starburst_api.classes.class_dataset_view import DatasetView
+import starburst_api
 
 from datamesh_checker.helpers.checker import is_valid_domain_product_name
 from datamesh_checker.helpers.string import to_snake_case, is_snake_case
