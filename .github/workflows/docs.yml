@@ -27,7 +27,7 @@ jobs:
 
     - name: Build documentation
       run: |
-        pip install git+https://github.com/Donutson/starburst_api_python.git
+        pip install git+https://github.com/Donutson/starburst_api_python.git reportlab
         sphinx-build -b html docs_source/source/ docs/
 
     - name: Deploy to GitHub Pages
