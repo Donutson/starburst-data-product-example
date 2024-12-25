@@ -48,6 +48,16 @@
 <li class="toctree-l1"><a class="reference internal" href="introduction.html#prerequisites">Prerequisites</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html#installation">Installation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Checker</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#classes.checker.Checker"><code class="docutils literal notranslate"><span class="pre">Checker</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#classes.checker.Checker.starburst_client"><code class="docutils literal notranslate"><span class="pre">Checker.starburst_client</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#classes.checker.Checker.check_data_product_all_datasets"><code class="docutils literal notranslate"><span class="pre">Checker.check_data_product_all_datasets()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#classes.checker.Checker.check_data_product_dataset"><code class="docutils literal notranslate"><span class="pre">Checker.check_data_product_dataset()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#classes.checker.Checker.check_data_product_info"><code class="docutils literal notranslate"><span class="pre">Checker.check_data_product_info()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#classes.checker.Checker.check_domain"><code class="docutils literal notranslate"><span class="pre">Checker.check_domain()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#classes.checker.Checker.check_domain_all_data_products"><code class="docutils literal notranslate"><span class="pre">Checker.check_domain_all_data_products()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#classes.checker.Checker.check_domain_data_product"><code class="docutils literal notranslate"><span class="pre">Checker.check_domain_data_product()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#usage-example">Usage Example</a></li>
 </ul>
 </li>
@@ -80,6 +90,183 @@
              
   <section id="checker">
 <h1>Checker<a class="headerlink" href="#checker" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="classes.checker.Checker">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">classes.checker.</span></span><span class="sig-name descname"><span class="pre">Checker</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">starburst_client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Starburst</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#classes.checker.Checker" title="Link to this definition"></a></dt>
+<dd><p>A class to validate and check various properties of domains and data products
+in the Starburst data catalog.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="classes.checker.Checker.starburst_client">
+<span class="sig-name descname"><span class="pre">starburst_client</span></span><a class="headerlink" href="#classes.checker.Checker.starburst_client" title="Link to this definition"></a></dt>
+<dd><p>An instance of the Starburst client to interact
+with the Starburst API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Starburst</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">check_domain(domain_name</span></span></dt>
+<dd><p>str) -&gt; dict:
+Check the validity of a domain’s properties.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">check_data_product_info(data_product</span></span></dt>
+<dd><p>DataProduct, valid_catalogs: dict=[“minio”, “minio_robin”]) -&gt; dict:
+Check the validity of a data product’s properties.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">check_data_product_dataset(dataset</span></span></dt>
+<dd><p>DatasetView) -&gt; dict:
+Check the validity of a dataset’s properties.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">check_data_product_all_datasets(data_product</span></span></dt>
+<dd><p>DataProduct) -&gt; list:
+Check all datasets of a data product.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">check_domain_data_product(domain_name</span></span></dt>
+<dd><p>str, data_product_name: str) -&gt; dict:
+Check the validity of a specific data product within a domain.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">check_domain_all_data_products(domain_name</span></span></dt>
+<dd><p>str) -&gt; list:
+Check the validity of all data products within a domain.</p>
+</dd></dl>
+
+<p>Initialize the Checker with a Starburst client.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>starburst_client</strong> (<em>Starburst</em>) – An instance of the Starburst client.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="classes.checker.Checker.check_data_product_all_datasets">
+<span class="sig-name descname"><span class="pre">check_data_product_all_datasets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_product</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataProduct</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#classes.checker.Checker.check_data_product_all_datasets" title="Link to this definition"></a></dt>
+<dd><p>Check all datasets of a data product.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data_product</strong> (<em>DataProduct</em>) – The data product whose datasets are to be checked.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of dictionaries containing the validation results of each dataset.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="classes.checker.Checker.check_data_product_dataset">
+<span class="sig-name descname"><span class="pre">check_data_product_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DatasetView</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#classes.checker.Checker.check_data_product_dataset" title="Link to this definition"></a></dt>
+<dd><p>Check the validity of a dataset’s properties.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dataset</strong> (<em>DatasetView</em>) – The dataset to check.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dictionary containing the validation results of the dataset’s properties.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="classes.checker.Checker.check_data_product_info">
+<span class="sig-name descname"><span class="pre">check_data_product_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_product</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataProduct</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">valid_catalogs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">['minio',</span> <span class="pre">'minio_robin']</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#classes.checker.Checker.check_data_product_info" title="Link to this definition"></a></dt>
+<dd><p>Check the validity of a data product’s properties.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data_product</strong> (<em>DataProduct</em>) – The data product to check.</p></li>
+<li><p><strong>valid_catalogs</strong> (<em>dict</em><em>, </em><em>optional</em>) – A list of valid catalog names. Default is [“minio”, “minio_robin”].</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dictionary containing the validation results of the data product’s properties.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="classes.checker.Checker.check_domain">
+<span class="sig-name descname"><span class="pre">check_domain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">domain_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#classes.checker.Checker.check_domain" title="Link to this definition"></a></dt>
+<dd><p>Check the validity of a domain’s properties.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>domain_name</strong> (<em>str</em>) – The name of the domain to check.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dictionary containing the validation results of the domain’s properties.
+None if the domain doesn’t exists</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="classes.checker.Checker.check_domain_all_data_products">
+<span class="sig-name descname"><span class="pre">check_domain_all_data_products</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">domain_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#classes.checker.Checker.check_domain_all_data_products" title="Link to this definition"></a></dt>
+<dd><p>Check the validity of all data products within a domain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>domain_name</strong> (<em>str</em>) – The name of the domain.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of dictionaries containing the validation results of each data product in the domain.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="classes.checker.Checker.check_domain_data_product">
+<span class="sig-name descname"><span class="pre">check_domain_data_product</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">domain_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_product_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#classes.checker.Checker.check_domain_data_product" title="Link to this definition"></a></dt>
+<dd><p>Check the validity of a specific data product within a domain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>domain_name</strong> (<em>str</em>) – The name of the domain.</p></li>
+<li><p><strong>data_product_name</strong> (<em>str</em>) – The name of the data product to check.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dictionary containing the validation results of the data product and its datasets.
+None if the data product doesn’t exists</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 <section id="usage-example">
 <h2>Usage Example<a class="headerlink" href="#usage-example" title="Link to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">classes.checker</span> <span class="kn">import</span> <span class="n">Checker</span>
