@@ -7,8 +7,8 @@ Starburst Data Product Checker
 ======================================================
 
 
-
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
+   introduction
