@@ -12,7 +12,7 @@ sys.path.insert(0, os.path.abspath("../../starburst_api"))
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'Starburst Data Product Migration Example'
+project = 'Starburst Data Product Checker'
 copyright = '2024, Gougou Nelson'
 author = 'Gougou Nelson'
 release = '0.5.0'
