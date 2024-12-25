@@ -13,3 +13,4 @@ Starburst Data Product Checker
 
    introduction
    checker
+   generate_report_pdf
