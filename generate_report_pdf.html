@@ -47,7 +47,10 @@
 <li class="toctree-l1"><a class="reference internal" href="introduction.html#prerequisites">Prerequisites</a></li>
 <li class="toctree-l1"><a class="reference internal" href="introduction.html#installation">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="checker.html">Checker</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Generate PDF Report</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Generate PDF Report</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#helpers.checker.create_pdf_from_domain_product_report"><code class="docutils literal notranslate"><span class="pre">create_pdf_from_domain_product_report()</span></code></a></li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -76,6 +79,42 @@
              
   <section id="generate-pdf-report">
 <h1>Generate PDF Report<a class="headerlink" href="#generate-pdf-report" title="Link to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="helpers.checker.create_pdf_from_domain_product_report">
+<span class="sig-prename descclassname"><span class="pre">helpers.checker.</span></span><span class="sig-name descname"><span class="pre">create_pdf_from_domain_product_report</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">report</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#helpers.checker.create_pdf_from_domain_product_report" title="Link to this definition"></a></dt>
+<dd><p>Create a PDF report from a domain product validation report.</p>
+<p>This function generates a PDF document that summarizes the validation report
+of a domain product. The report includes information on the data product and
+its datasets, indicating whether each piece of information is valid or not.
+Invalid entries are highlighted in red.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>report</strong> (<em>dict</em>) – The validation report containing information on the domain product.
+It includes sections like ‘data_product_info’ and ‘data_product_datasets’.</p></li>
+<li><p><strong>filename</strong> (<em>str</em>) – The name of the file to save the generated PDF document.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">report</span> <span class="o">=</span> <span class="p">{</span>
+<span class="go">        &#39;data_product_info&#39;: {</span>
+<span class="go">            &#39;data_product_name&#39;: {&#39;value&#39;: &#39;ValidName&#39;, &#39;is_valid&#39;: True},</span>
+<span class="go">            &#39;data_product_summary&#39;: {&#39;value&#39;: &#39;Some summary&#39;, &#39;is_valid&#39;: True}</span>
+<span class="go">        },</span>
+<span class="go">        &#39;data_product_datasets&#39;: [</span>
+<span class="go">            {&#39;dataset_name&#39;: {&#39;value&#39;: &#39;ValidDataset&#39;, &#39;is_valid&#39;: True}},</span>
+<span class="go">            {&#39;dataset_name&#39;: {&#39;value&#39;: &#39;InvalidDataset&#39;, &#39;is_valid&#39;: False}}</span>
+<span class="go">        ]</span>
+<span class="go">    }</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">create_pdf_from_domain_product_report</span><span class="p">(</span><span class="n">report</span><span class="p">,</span> <span class="s1">&#39;report.pdf&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
 </section>
 
 
